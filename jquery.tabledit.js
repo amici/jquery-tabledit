@@ -36,6 +36,7 @@ if (typeof jQuery === 'undefined') {
             rowIdentifier: 'id',
             hideIdentifier: false,
             autoFocus: true,
+            selectOnEdit: false,
             editButton: true,
             deleteButton: true,
             saveButton: true,
@@ -234,6 +235,10 @@ if (typeof jQuery === 'undefined') {
                 // Focus on input element.
                 if (settings.autoFocus) {
                     $input.focus();
+                }
+                //  Automatically select the value in edited field
+                if (settings.selectOnEdit) {
+                    $input.select();
                 }
                 // Add "edit" class and remove "view" class in td element.
                 $(td).addClass('tabledit-edit-mode').removeClass('tabledit-view-mode');
